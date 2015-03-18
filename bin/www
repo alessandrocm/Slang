@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+var server = require('./../app');
+var port = process.env.PORT || 3000;
+
+server.listen(port, function(){
+  console.log('grand-slacker-station listening on port ' + port);
+});

@@ -1,0 +1,30 @@
+{
+  "name": "grand-slacker-station",
+  "version": "0.0.0",
+  "description": "A nodejs application for Slack hook integrations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alessandrocm/grand-slacker-station.git"
+  },
+  "author": "alessandro.cattermartinez@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alessandrocm/grand-slacker-station/issues"
+  },
+  "homepage": "https://github.com/alessandrocm/grand-slacker-station",
+  "dependencies": {
+    "express": "~4.12.3",
+    "body-parser": "~1.12.2",
+    "request": "~2.53.0",
+    "xml2js": "~0.4.6"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.1",
+    "chai": "~2.1.2",
+    "supertest": "~0.15.0"
+  }
+}
