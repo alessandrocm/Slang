@@ -17,12 +17,17 @@ function loadPlugins(){
   var length = directories.length;
 
   for(i;i < length;i++){
-    commands.use(path.join(__dirname, directories[i], 'plugin'),options);
+    commands.use(require(path.join(__dirname, directories[i], 'plugin')),options);
   }
 }
 
 module.exports.load = function() {
   loadPlugins();
+  commands.init(function(err){
+    if (err) {
+      throw err;
+    }
+  });
 
   return {
     run : function(request,callback){
