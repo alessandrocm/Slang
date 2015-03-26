@@ -5,24 +5,25 @@ var broadway = require('broadway')
   , commands = new broadway.App();
   
 
-function loadDirectories(){
-  return fs.readdirSync(__dirname).filter(function(file){
-    return fs.statSync(path.join(__dirname,file)).isDirectory();
+function loadDirectories(dir){
+  return fs.readdirSync(dir).filter(function(file){
+    return fs.statSync(path.join(dir,file)).isDirectory();
   });
 }
 
-function loadPlugins(){
-  var directories = loadDirectories();
+function loadPlugins(dir){
+  var directories = loadDirectories(dir);
   var i = 0;
   var length = directories.length;
 
   for(i;i < length;i++){
-    commands.use(require(path.join(__dirname, directories[i], 'plugin')),options);
+    commands.use(require(path.join(dir, directories[i], 'plugin')),options);
   }
 }
 
-module.exports.load = function() {
-  loadPlugins();
+module.exports.load = function(options) {
+  var dir = (options && options.dir) ? path.join(__dirname,options.dir) : __dirname;
+  loadPlugins(dir);
   commands.init(function(err){
     if (err) {
       throw err;

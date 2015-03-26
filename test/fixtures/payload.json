@@ -1,0 +1,9 @@
+{  
+  "team_id" : "T1234",
+  "channel_id" : "C4321",
+  "channel_name" : "#Channel",
+  "user_id" : "U6789",
+  "user_name" : "@testuser",
+  "command" : "/foo",
+  "text" : "bar"
+}
