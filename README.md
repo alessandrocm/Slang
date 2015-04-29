@@ -1,2 +1,2 @@
-# grand-slacker-station
-A nodejs web application for Slack hook integrations
+# Slang
+A nodejs web application for Slack slash command integrations.
