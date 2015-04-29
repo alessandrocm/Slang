@@ -39,7 +39,27 @@ describe('Slang app',function(){
       .expect(204, done); 
     });
 
-    it('should not post to slackHook if plugin returns no message.',function(done){
+    it('should post to Slack webhook for plugin message',function(done){
+     request(app)
+      .post('/slash/commands')
+      .type('form')
+      .send({token: 'DEADFEED'})
+      .send({team_id : 'T0001'})
+      .send({channel_id : 'C2147483705'})
+      .send({channel_name : 'test'})
+      .send({user_id : 'U2147483697'})
+      .send({user_name : 'Lucas'})
+      .send({command : '/foo'})
+      .send({text : ''})
+      .expect(204)
+      .end(function(err,res){
+        if (err) return done(err);
+        postCount.should.be.equal(1);
+        return done();
+      }); 
+    });
+
+    it('should not post to Slack webhook if plugin returns no message.',function(done){
      request(app)
       .post('/slash/commands')
       .type('form')
