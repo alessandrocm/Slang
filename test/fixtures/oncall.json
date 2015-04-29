@@ -1,0 +1,38 @@
+[ 
+  { 
+    "level": 1,
+    "start": "2015-04-05T04:00:00Z",
+    "end": "2015-04-12T04:00:00Z",
+    "user": { 
+        "id": "P7R2OG7V",
+        "name": "Rick Zwicker",
+        "email": "rzwicker@email.com",
+        "time_zone": "Eastern Time (US & Canada)",
+        "color": "dark-orange" 
+      } 
+  },
+  { 
+    "level": 2,
+    "start": "2015-04-06T13:37:45Z",
+    "end": "2015-04-12T04:00:00Z",
+    "user": {
+        "id": "P7R2OG7",
+        "name": "Chris Heckathorne",
+        "email": "heckathorne@email.com",
+        "time_zone": "Eastern Time (US & Canada)",
+        "color": "cayenne" 
+      } 
+  },
+  { 
+    "level": 3,
+    "start": null,
+    "end": null,
+    "user": { 
+      "id": "PNLM60O",
+      "name": "Alessandro Catter-Martinez",
+      "email": "amartinez@email.com",
+      "time_zone": "Eastern Time (US & Canada)",
+      "color": "red" 
+    } 
+  } 
+]

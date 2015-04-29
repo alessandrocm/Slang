@@ -10,14 +10,14 @@ module.exports = function(bodyParser, commands){
   var urlencoder = bodyParser.urlencoded({extended:false});
 
   router.post('/commands', urlencoder, function(request,response) {
-    var slackRequest = new slack.SlackRequest(request.body);
+    var slackRequest = new slack.Request(request.body);
     var hook = new slack.Hook(opts); 
-    var callback = function(error, result) {
+    var callback = function(error, message) {
       if (error) {
         response.sendStatus(500);
       }
-      else if (result && result.message) {
-        hook.send(result.message, function(err) {
+      else if (message) {
+        hook.send(message, function(err) {
           if (err) {
             response.sendStatus(500);
           }

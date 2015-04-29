@@ -1,0 +1,150 @@
+{
+    "escalation_policies": [{
+        "id": "PTX1YIT",
+        "name": "ICSoftware Prod Support",
+        "escalation_rules": [{
+            "id": "P823KTM",
+            "escalation_delay_in_minutes": 15,
+            "rule_object": {
+                "id": "P32S0MO",
+                "name": "Prod Support Level I",
+                "type": "schedule"
+            },
+            "targets": [{
+                "id": "P3350MO",
+                "name": "Prod Support Level I",
+                "type": "schedule"
+            }, {
+                "id": "P7R0OG7",
+                "name": "Ameet Doshi",
+                "type": "user",
+                "email": "adoshi@industrialcolor.com",
+                "time_zone": null,
+                "color": "dark-cyan"
+            }]
+        }, {
+            "id": "PJCDJT",
+            "escalation_delay_in_minutes": 15,
+            "rule_object": {
+                "id": "P0X5WVB",
+                "name": "Prod Support Level II",
+                "type": "schedule"
+            },
+            "targets": [{
+                "id": "PQXEWVB",
+                "name": "Prod Support Level II",
+                "type": "schedule"
+            }]
+        }, {
+            "id": "PYUGH8V",
+            "escalation_delay_in_minutes": 15,
+            "rule_object": {
+                "id": "P25XZ2R",
+                "name": "Alessandro Catter-Martinez",
+                "type": "user",
+                "email": "amartinez@email.com",
+                "time_zone": null,
+                "color": "red"
+            },
+            "targets": [{
+                "id": "P25XZ2R",
+                "name": "Alessandro Catter-Martinez",
+                "type": "user",
+                "email": "amartinez@email.com",
+                "time_zone": null,
+                "color": "red"
+            }, {
+                "id": "P7R2OG7V",
+                "name": "Ameet Yoshi",
+                "type": "user",
+                "email": "ayoshi@email.com",
+                "time_zone": null,
+                "color": "dark-cyan"
+            }]
+        }],
+        "services": [{
+            "id": "PVJHS5D",
+            "name": "ICSoftware Prod Support",
+            "service_url": "/services/PVJHS5D",
+            "service_key": "prodsupport@pagerduty.com",
+            "auto_resolve_timeout": 14400,
+            "acknowledgement_timeout": 7200,
+            "created_at": "2014-09-22T11:27:00-04:00",
+            "deleted_at": null,
+            "status": "active",
+            "last_incident_timestamp": "2015-04-06T10:14:56-04:00",
+            "email_incident_creation": "on_new_email_subject",
+            "incident_counts": {
+                "triggered": 0,
+                "acknowledged": 0,
+                "resolved": 296,
+                "total": 296
+            },
+            "email_filter_mode": "all-email",
+            "type": "generic_email",
+            "description": ""
+        }],
+        "num_loops": 3,
+        "description": "",
+        "on_call": [{
+            "level": 1,
+            "start": "2015-04-05T04:00:00Z",
+            "end": "2015-04-12T04:00:00Z",
+            "user": {
+                "id": "P7R2OG7V",
+                "name": "Rick Zwicker",
+                "email": "rzwicker@email.com",
+                "time_zone": "Eastern Time (US & Canada)",
+                "color": "dark-orange"
+            }
+        }, {
+            "level": 1,
+            "start": null,
+            "end": null,
+            "user": {
+                "id": "PSO6W9M",
+                "name": "Ameet Yoshi",
+                "email": "ayoshi@email.com",
+                "time_zone": "Eastern Time (US & Canada)",
+                "color": "dark-cyan"
+            }
+        }, {
+            "level": 2,
+            "start": "2015-04-06T13:37:45Z",
+            "end": "2015-04-12T04:00:00Z",
+            "user": {
+                "id": "P7R2OG7",
+                "name": "Chris Heckathorne",
+                "email": "heckathorne@email.com",
+                "time_zone": "Eastern Time (US & Canada)",
+                "color": "cayenne"
+            }
+        }, {
+            "level": 3,
+            "start": null,
+            "end": null,
+            "user": {
+                "id": "PNLM60O",
+                "name": "Alessandro Catter-Martinez",
+                "email": "amartinez@email.com",
+                "time_zone": "Eastern Time (US & Canada)",
+                "color": "red"
+            }
+        }, {
+            "level": 3,
+            "start": null,
+            "end": null,
+            "user": {
+                "id": "P25XZ2R",
+                "name": "Ameet Yoshi",
+                "email": "ayoshi@email.com",
+                "time_zone": "Eastern Time (US & Canada)",
+                "color": "dark-cyan"
+            }
+        }]
+    }],
+    "query": "Software Prod Support",
+    "limit": 25,
+    "offset": 0,
+    "total": 1
+}

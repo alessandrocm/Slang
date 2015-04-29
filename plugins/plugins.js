@@ -35,7 +35,10 @@ module.exports.load = function(options) {
             if (!request) {
               return (callback(new Error('slack request cannot be null.')));
             }
-            
+            if (!request.command || request.command.length === 0) {
+              return (callback(new Error('invalid slack command.')));
+            }
+
             var method = request.command.substr(1);
             if (commands.hasOwnProperty(method) && typeof commands[method] === 'function') {
               return (commands[method](request, callback));

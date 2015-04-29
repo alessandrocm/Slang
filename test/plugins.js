@@ -36,7 +36,7 @@ describe('Plugins',function(){
     it('should callback with error if no method matches the slack command',function(done){
       var opts = { dir : testDir };
       var target = plugins.load(opts);
-      request.command = '/bar';
+      request.command = '/baz';
       target.run(request,function(err,message){
         err.should.be.ok;
         done();

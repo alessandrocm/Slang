@@ -1,0 +1,10 @@
+{ 
+  "token": "DeadFeed",
+  "teamId": "T1234",
+  "channelId": "C4321",
+  "channelName": "#Channel",
+  "userId": "U6789",
+  "userName": "@testuser",
+  "command": "/oncall",
+  "text": "" 
+}
