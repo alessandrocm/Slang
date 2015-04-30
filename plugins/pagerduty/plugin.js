@@ -1,12 +1,12 @@
 var pagerduty = require('./pagerduty');
-var messages = require('./pagerduty-messages');
+var messages = require('./messages');
 
 function oncall(request, callback) {
   if (!request) {
     return (callback(new Error('slack request cannot be null.')));
   }
 
-  pagerduty.oncall(opts, function(err,data){ 
+  pagerduty.oncall(request, function(err,data){ 
     if(err) {
       return (callback(err));
     }
@@ -15,10 +15,10 @@ function oncall(request, callback) {
     var message = messages.oncall(request, data);
     return (callback(null, message));
 
-  })
+  });
 }
 
-var pagerduty = {
+var plugin = {
   'name' : 'pagerduty-plugin',
 
   'attach' : function attach(options) {
@@ -30,4 +30,4 @@ var pagerduty = {
           }
 };
 
-module.exports = pagerduty;
+module.exports = plugin;
