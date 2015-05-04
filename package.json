@@ -1,5 +1,5 @@
 {
-  "name": "grand-slacker-station",
+  "name": "Slang",
   "version": "0.0.0",
   "description": "A nodejs application for Slack hook integrations",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/alessandrocm/grand-slacker-station.git"
+    "url": "git://github.com/alessandrocm/Slang.git"
   },
   "author": "alessandro.cattermartinez@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alessandrocm/grand-slacker-station/issues"
+    "url": "https://github.com/alessandrocm/Slang/issues"
   },
-  "homepage": "https://github.com/alessandrocm/grand-slacker-station",
+  "homepage": "https://github.com/alessandrocm/Slang",
   "dependencies": {
     "express": "~4.12.3",
     "body-parser": "https://registry.npmjs.org/body-parser/-/body-parser-1.12.2.tgz",
