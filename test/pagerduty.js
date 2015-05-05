@@ -1,6 +1,7 @@
 var request = require('request')
   , should = require('chai').should()
   , oncallData = require('./fixtures/pagerduty_oncall.json')
+  , payload = require('./fixtures/payload.json')
   , target = require('./../plugins/pagerduty/pagerduty.js');
 
 describe('Pagerduty plugin',function(){
@@ -40,7 +41,8 @@ describe('Pagerduty plugin',function(){
 
       it('should callback with array of length 1 if level is specified.',function(done){
         data = oncallData;
-        target.oncall({level:1},function(err, persons){
+        payload.text = '1';
+        target.oncall(payload,function(err, persons){
           persons.should.be.ok;
           persons.should.have.length(1);
           done();

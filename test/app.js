@@ -78,12 +78,5 @@ describe('Slang app',function(){
         return done();
       }); 
     });
-
-    it('should respond with 500 if no request body sent.',function(done){
-      request(app)
-        .post('/slash/commands')
-        .type('form')
-        .expect(500,done);
-    });
   });
 });

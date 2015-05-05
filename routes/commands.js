@@ -14,23 +14,20 @@ module.exports = function(bodyParser, commands){
     var hook = new slack.Hook(opts); 
     var callback = function(error, message) {
       if (error) {
-        response.sendStatus(500);
+        console.log(error.message);
+        return;
       }
-      else if (message) {
+
+      if (message) {
         hook.send(message, function(err) {
           if (err) {
-            response.sendStatus(500);
-          }
-          else {
-            response.sendStatus(204);
+            console.log(err.message);
           }
         });    
       }
-      else {
-        response.sendStatus(204);
-      }
     };
     commands.run(slackRequest,callback);
+    response.sendStatus(204);
   });
   
   return router;
