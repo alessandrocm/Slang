@@ -1,11 +1,13 @@
 var slack = require('./../../lib/slack');
+var util = require('util');
 
 function echo(request,callback) {
  if (!request) {
   return (callback(new Error('slack request cannot be null.')));
  }
- 
- var message = new slack.Message(request.text, request.channelName, request.userId, ':smiley_face:');
+
+ var channel = util.format('@%s',request.userName);
+ var message = new slack.Message(request.text, channel, 'Slang', ':smiley:');
 
  return (callback(null,message));
 }
