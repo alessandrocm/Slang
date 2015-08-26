@@ -33,11 +33,11 @@ describe('SlackService',function(){
 		});
 	});
 	describe('#attach',function(){
-		it('should throw error if no message exists',function(done){
+		it('should not attach if no message exists',function(done){
 			var target = new SlackService();
-			expect(function(){
-				target.attach('FALLBACK','#FFFFFF');	
-			}).to.throw('No message to attach to.');
+			var actual = target.attach('FALLBACK','#FFFFFF');
+			expect(target._message).to.be.null;
+			expect(actual).to.be.instanceof(SlackService);
 			done();
 		});
 		it('should return SlackService if successful',function(done){
@@ -64,18 +64,18 @@ describe('SlackService',function(){
 		});
 	});
 	describe('#field',function(){
-		it('should throw error if no message exists',function(done){
+		it('should not attach field if no message exists',function(done){
 			var target = new SlackService();
-			expect(function(){
-				target.field('TITLE','VALUE',true);
-			}).to.throw('No message to attach field to.');
+			var actual = target.field('TITLE','VALUE',true);
+			expect(target._message).to.be.null;
+			expect(actual).to.be.instanceof(SlackService);
 			done();
 		});
-		it('should throw error if no attachment exists',function(done){
+		it('should not attach field if no attachment exists',function(done){
 			var target = new SlackService();
-			expect(function(){
-				target.message().field('TITLE','VALUE',true);
-			}).to.throw('No attachments to attach field to.');
+			var actual = target.message().field('TITLE','VALUE',true);
+			expect(target._message.attachments).to.be.empty;
+			expect(actual).to.be.instanceof(SlackService);
 			done();
 		});
 		it('should return SlackService if successful',function(done){
