@@ -4,7 +4,7 @@
 var expect = require('chai').expect;
 var EventEmitter = require('events').EventEmitter;
 var Promise = require('bluebird');
-var SlackService = require('./../lib/slackService');
+var SlackService = require('./../lib/slack').Service;
 var plugins = require('./../plugins');
 var echoPlugin = require('./../plugins/echo');
 
@@ -16,6 +16,12 @@ describe('Plugin', function () {
 			app = new EventEmitter();
 			done();
 		});
+        it('should throw expection if options are null',function(done){
+            expect(function(){
+                plugins();
+            }).to.throw('Options cannot be null or undefined');
+            done();
+        })
 		it('should load all plugins',function(done){
 			var pluginCount = 0;
 			app.use = function(command, plugin) {

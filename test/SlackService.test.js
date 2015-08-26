@@ -3,7 +3,7 @@
 
 var expect = require('chai').expect;
 var Promise = require('bluebird');
-var SlackService = require('./../lib/SlackService');
+var SlackService = require('./../lib/slack').Service;
 
 describe('SlackService',function(){
 	describe('#constructor',function(){
