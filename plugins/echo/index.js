@@ -1,12 +1,17 @@
 'use strict';
 
 var util = require('util');
-var slack = null;
 
 function echo(request, slack) {
   if (request) {
-    var channel = util.format('@%s', request.userName);
-    slack.message(request.text, channel, 'Slang', ':smiley:').send();
+      var channel = '#general';
+      if(request.channel_name === 'directmessage') {
+        channel = util.format('@%s',request.user_name);   
+      }
+      else {
+          channel = request.channel_id;
+      }
+      slack.message(request.text, channel, 'Slang', ':smiley:').send();
   }
 };
 
