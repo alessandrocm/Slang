@@ -1,8 +1,0 @@
-#!/usr/bin/env node-debug
-
-var server = require('./../app');
-var port = process.env.PORT || 3000;
-
-server.listen(port, function(){
-  console.log('Slang (DEBUG MODE) listening on port ' + port);
-});

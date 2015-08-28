@@ -1,0 +1,10 @@
+{
+  "appenders": [
+    {
+      "type": "file",
+      "filename": "slang.log",
+      "maxLogSize": 2048000,
+      "backups": 3
+    }
+  ]
+}
