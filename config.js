@@ -1,3 +1,5 @@
+'use strict';
 module.exports = {
-    slack_hook : 'https:// https://hooks.slack.com/services/TXXXXX/BXXXXX/XYXYXYXYXYXYX'
+    slack_hook: process.env.SLACK_HOOK
 };
+
